@@ -47,13 +47,13 @@ const allArticles = [
     title: "Transform Your Small Apartment Into a Cozy Retreat",
     slug: "cozy-apartment-retreat",
     category: "Bedroom",
-    image: "/Cozy-apartment-retreat/cozy-apartment-retreat.png"
+    image: "/Cozy-apartment-retreat/cozy-apartment-retreat.webp"
   },
   {
     title: "6 Simple Rules to Make Your Home Beautiful Every Single Day",
     slug: "6-simple-ideas-beautiful-home",
     category: "Decor Rules",
-    image: "/cat-decor.png"
+    image: "/cat-decor.webp"
   },
   {
     title: "The Aesthetic Wire Storage Cart That Fixes Floor Clutter",
@@ -65,25 +65,25 @@ const allArticles = [
     title: "Small Space Plant Corner Ideas That Feel Expensive",
     slug: "small-space-plant-corner",
     category: "Small Spaces",
-    image: "/small-space-plant-corner/small-space-plant-corner-ideas-that-feel-expensive.png"
+    image: "/small-space-plant-corner/small-space-plant-corner-ideas-that-feel-expensive.webp"
   },
   {
     title: "5 Renter-Friendly Decor Swaps That Made Our Apartment Look Custom",
     slug: "renter-friendly-decor-upgrades",
     category: "Decor Rules",
-    image: "/hero-image.png"
+    image: "/hero-image.webp"
   },
   {
     title: "5 Decor Mistakes That Are Making Your Apartment Look Cheap",
     slug: "decor-mistakes-making-apartment-look-cheap",
     category: "Decor Rules",
-    image: "/5-mistakes/cover.png"
+    image: "/5-mistakes/cover.webp"
   },
   {
     title: "5 Ways to Fake a Lush Backyard on a Tiny Apartment Balcony",
     slug: "fake-backyard-apartment-balcony-upgrades",
     category: "Balcony & Outdoor",
-    image: "/fake-backyard-apartment-balcony-upgrades/Balcony-Oasis.png"
+    image: "/fake-backyard-apartment-balcony-upgrades/Balcony-Oasis.webp"
   }
 ];
 
@@ -142,12 +142,12 @@ export default function Navbar() {
       <header className="sticky top-0 z-40 bg-[#FAF8F4]/95 backdrop-blur-md border-b border-[#DDD6C8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            
-            {/* Brand Logo with Official Logo.png */}
+
+            {/* Brand Logo with Official Logo.webp */}
             <Link href="/" className="flex items-center gap-3 group py-1">
-              <img 
-                src="/Logo.png" 
-                alt="Cozy Home By Azlan" 
+              <img
+                src="/Logo.webp"
+                alt="Cozy Home By Azlan"
                 className="h-16 w-auto object-contain transition-transform group-hover:scale-105 mix-blend-multiply"
               />
               <span className="font-serif text-2xl font-bold text-[#2F2F2F] tracking-tight group-hover:text-[#4E5B47] transition-colors hidden sm:inline">
@@ -268,7 +268,7 @@ export default function Navbar() {
       {isSearchOpen && (
         <div className="fixed inset-0 z-50 bg-[#2F2F2F]/60 backdrop-blur-sm flex items-start justify-center pt-16 sm:pt-20 px-4 overflow-y-auto pb-12">
           <div className="bg-[#FFFFFF] w-full max-w-2xl rounded-3xl shadow-2xl p-6 relative border border-[#DDD6C8] animate-in fade-in zoom-in-95 duration-150 my-auto">
-            
+
             {/* Modal Header */}
             <div className="flex items-center justify-between pb-4 border-b border-[#DDD6C8]">
               <h3 className="font-serif text-lg text-[#2F2F2F] font-semibold">Search Articles & Finds</h3>

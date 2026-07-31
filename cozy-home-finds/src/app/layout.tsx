@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: 'Cozy Home Finds',
     images: [
       {
-        url: '/hero-image.png',
+        url: '/hero-image.webp',
         width: 1200,
         height: 630,
         alt: 'Cozy Home Finds Aesthetic Living Space',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Cozy Home Finds',
     description: 'Aesthetic home decor ideas and organization tips.',
-    images: ['/hero-image.png'],
+    images: ['/hero-image.webp'],
   },
 };
 

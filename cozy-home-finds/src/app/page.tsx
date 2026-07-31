@@ -29,7 +29,7 @@ export default function Home() {
 
         <div className="md:w-1/2 w-full h-80 md:h-[500px] relative">
           <Image
-            src="/hero-image.png"
+            src="/hero-image.webp"
             alt="Azlan's aesthetic living room setup"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
@@ -44,7 +44,7 @@ export default function Home() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <Link href="/category/small-spaces" className="group relative h-48 rounded-2xl overflow-hidden border border-[#DDD6C8]">
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10 group-hover:from-black/95 transition-all" />
-            <img src="/small-space-plant-corner/small-space-plant-corner-ideas-that-feel-expensive.png" alt="Small Spaces" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" />
+            <img src="/small-space-plant-corner/small-space-plant-corner-ideas-that-feel-expensive.webp" alt="Small Spaces" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" />
             <div className="absolute bottom-4 left-4 right-4 z-20">
               <h3 className="text-white font-serif text-xl font-bold tracking-wide drop-shadow-md">Small Spaces</h3>
             </div>

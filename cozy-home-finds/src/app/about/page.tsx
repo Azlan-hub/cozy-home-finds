@@ -19,7 +19,7 @@ export default function AboutPage() {
       <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
         <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-[#FAF8F4] border border-[#DDD6C8] shadow-xl">
           <Image
-            src="/about-image.png"
+            src="/about-image.webp"
             alt="Azlan styling a cozy living room"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
@@ -29,7 +29,7 @@ export default function AboutPage() {
 
         <div className="space-y-6 text-[#66645F] text-lg leading-relaxed">
           <p>
-            Hi, I’m <strong className="text-[#2F2F2F]">Azlan</strong>. A few years ago, my wife and I moved into what can only be described as a "sterile white box" of an apartment. 
+            Hi, I’m <strong className="text-[#2F2F2F]">Azlan</strong>. A few years ago, my wife and I moved into what can only be described as a "sterile white box" of an apartment.
           </p>
           <p>
             We had landlord-grade beige carpets, harsh overhead lighting that gave us headaches, and zero square footage. We wanted that beautifully curated, expensive-looking home we saw on Pinterest, but we didn't have a massive renovation budget or permission to tear down walls.
