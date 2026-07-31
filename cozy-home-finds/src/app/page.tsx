@@ -6,7 +6,6 @@ import { topProducts } from '@/lib/products';
 
 // LAZY LOAD below-the-fold Client Components with skeleton loaders
 const ProductCarousel = dynamic(() => import('@/components/ProductCarousel'), {
-  ssr: false,
   loading: () => <div className="h-64 bg-[#F2EDE4] rounded-3xl animate-pulse w-full" />
 });
 
