@@ -146,7 +146,7 @@ export default function Navbar() {
             {/* Brand Logo with Official Logo.webp */}
             <Link href="/" className="flex items-center gap-3 group py-1">
               <Image
-                src="/Logo.webp"
+                src="/logo.webp"
                 alt="Cozy Home By Azlan"
                 width={200}
                 height={64}
