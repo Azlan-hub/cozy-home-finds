@@ -145,9 +145,12 @@ export default function Navbar() {
 
             {/* Brand Logo with Official Logo.webp */}
             <Link href="/" className="flex items-center gap-3 group py-1">
-              <img
+              <Image
                 src="/Logo.webp"
                 alt="Cozy Home By Azlan"
+                width={200}
+                height={64}
+                priority
                 className="h-16 w-auto object-contain transition-transform group-hover:scale-105 mix-blend-multiply"
               />
               <span className="font-serif text-2xl font-bold text-[#2F2F2F] tracking-tight group-hover:text-[#4E5B47] transition-colors hidden sm:inline">
@@ -304,8 +307,8 @@ export default function Navbar() {
               <div className="mt-6 max-h-[60vh] overflow-y-auto space-y-6 pr-1">
                 {totalResults === 0 ? (
                   <div className="text-center py-10">
-                    <p className="text-[#2F2F2F] font-medium text-base">No results found for "{searchQuery}"</p>
-                    <p className="text-[#66645F] text-sm mt-1">Try searching for rooms like "living" or decor items like "shelves".</p>
+                    <p className="text-[#2F2F2F] font-medium text-base">No results found for &quot;{searchQuery}&quot;</p>
+                    <p className="text-[#66645F] text-sm mt-1">Try searching for rooms like &quot;living&quot; or decor items like &quot;shelves&quot;.</p>
                   </div>
                 ) : (
                   <>
@@ -324,7 +327,7 @@ export default function Navbar() {
                               className="flex items-center gap-4 p-3 rounded-2xl hover:bg-[#F2EDE4] transition-colors group"
                             >
                               <div className="w-14 h-14 rounded-xl overflow-hidden bg-[#FAF8F4] flex-shrink-0">
-                                <img src={article.image} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                                <Image src={article.image} alt={article.title} width={56} height={56} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
                               </div>
                               <div className="flex-1 min-w-0">
                                 <span className="text-xs font-semibold text-[#C9A66B] uppercase tracking-wider">{article.category}</span>
@@ -353,7 +356,7 @@ export default function Navbar() {
                               className="flex items-center gap-4 p-3 rounded-2xl hover:bg-[#F2EDE4] transition-colors group"
                             >
                               <div className="w-14 h-14 rounded-xl overflow-hidden bg-[#FAF8F4] flex-shrink-0 relative">
-                                <img src={product.imageUrl} alt={product.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                                <Image src={product.imageUrl} alt={product.title} width={56} height={56} unoptimized className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
                               </div>
                               <div className="flex-1 min-w-0">
                                 <span className="text-xs font-semibold text-[#8A947B] uppercase tracking-wider">{product.merchant}</span>

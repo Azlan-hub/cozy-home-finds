@@ -50,7 +50,8 @@ const components = {
   img: (props: any) => (
     <span className="block my-8">
       <span className="block max-w-xl mx-auto rounded-xl overflow-hidden shadow-lg border border-stone-200">
-        <img {...props} className="w-full h-auto object-cover" loading="lazy" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img {...props} alt={props.alt || ''} className="w-full h-auto object-cover" loading="lazy" />
       </span>
       {props.alt && (
         <span className="block text-center text-sm text-stone-400 italic mt-2">

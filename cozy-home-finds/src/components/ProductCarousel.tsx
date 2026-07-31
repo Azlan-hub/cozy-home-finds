@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from 'react';
+import Image from 'next/image';
 import { Product } from '@/lib/products';
 
 export default function ProductCarousel({ products }: { products: Product[] }) {
@@ -46,12 +47,13 @@ export default function ProductCarousel({ products }: { products: Product[] }) {
           <div key={product.id} className="min-w-[280px] md:min-w-[320px] max-w-[320px] snap-start group/card flex flex-col bg-[#FFFFFF] rounded-3xl border border-[#DDD6C8] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
             <a href={product.link} target="_blank" rel="noopener noreferrer" className="block flex-1 flex flex-col">
               <div className="aspect-square w-full bg-[#FAF8F4] relative p-6 flex items-center justify-center overflow-hidden border-b border-[#DDD6C8]">
-                <img 
+                <Image 
                   src={product.imageUrl} 
                   alt={product.title} 
-                  loading="lazy"
-                  decoding="async"
-                  className="object-contain w-full h-full group-hover/card:scale-105 transition-transform duration-500"
+                  fill
+                  sizes="(max-width: 768px) 280px, 320px"
+                  unoptimized
+                  className="object-contain p-6 group-hover/card:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-3 left-3 bg-[#FAF8F4]/95 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-[#4E5B47] uppercase tracking-wider border border-[#DDD6C8] shadow-sm">
                   {product.merchant}
