@@ -143,17 +143,17 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
 
-            {/* Brand Logo with Official Logo.webp */}
-            <Link href="/" className="flex items-center gap-3 group py-1">
+            {/* Brand Logo with Official logo.webp */}
+            <Link href="/" className="flex items-center gap-2 sm:gap-3 group py-1">
               <Image
                 src="/logo.webp"
                 alt="Cozy Home By Azlan"
                 width={200}
                 height={64}
                 priority
-                className="h-16 w-auto object-contain transition-transform group-hover:scale-105 mix-blend-multiply"
+                className="h-12 sm:h-16 w-auto object-contain transition-transform group-hover:scale-105 mix-blend-multiply"
               />
-              <span className="font-serif text-2xl font-bold text-[#2F2F2F] tracking-tight group-hover:text-[#4E5B47] transition-colors hidden sm:inline">
+              <span className="font-serif text-lg sm:text-2xl font-bold text-[#2F2F2F] tracking-tight group-hover:text-[#4E5B47] transition-colors inline">
                 Cozy Home
               </span>
             </Link>
