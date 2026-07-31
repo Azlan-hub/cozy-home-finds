@@ -49,6 +49,8 @@ export default function ProductCarousel({ products }: { products: Product[] }) {
                 <img 
                   src={product.imageUrl} 
                   alt={product.title} 
+                  loading="lazy"
+                  decoding="async"
                   className="object-contain w-full h-full group-hover/card:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-3 left-3 bg-[#FAF8F4]/95 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-[#4E5B47] uppercase tracking-wider border border-[#DDD6C8] shadow-sm">

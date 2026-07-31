@@ -1,16 +1,25 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { getAllPosts } from '@/lib/mdx';
 import { topProducts } from '@/lib/products';
-import NewsletterForm from '@/components/NewsletterForm';
-import ProductCarousel from '@/components/ProductCarousel';
+
+// LAZY LOAD below-the-fold Client Components with skeleton loaders
+const ProductCarousel = dynamic(() => import('@/components/ProductCarousel'), {
+  ssr: false,
+  loading: () => <div className="h-64 bg-[#F2EDE4] rounded-3xl animate-pulse w-full" />
+});
+
+const NewsletterForm = dynamic(() => import('@/components/NewsletterForm'), {
+  loading: () => <div className="h-16 bg-white/10 rounded-full animate-pulse w-full max-w-md mx-auto" />
+});
 
 export default function Home() {
   const posts = getAllPosts();
 
   return (
     <div className="space-y-16 pb-16">
-      {/* 1. HERO SECTION - BRAND PALETTE */}
+      {/* 1. HERO SECTION - PRIORITY WEBP IMAGE FOR BLAZING LCP */}
       <section className="relative flex flex-col md:flex-row items-center justify-between bg-[#F2EDE4] rounded-3xl overflow-hidden mt-6 border border-[#DDD6C8]">
         <div className="md:w-1/2 p-8 md:p-12 lg:p-16 z-10">
           <span className="text-[#C9A66B] font-semibold tracking-wider text-sm uppercase">Welcome to our home</span>
@@ -30,29 +39,41 @@ export default function Home() {
         <div className="md:w-1/2 w-full h-80 md:h-[500px] relative">
           <Image
             src="/hero-image.webp"
-            alt="Azlan's aesthetic living room setup"
+            alt="Cozy warm living room design"
             fill
+            priority
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
-            priority
           />
         </div>
       </section>
 
-      {/* 2. ALIGNED CATEGORY CARDS WITH HIGH CONTRAST WHITE TEXT */}
+      {/* 2. ALIGNED CATEGORY CARDS WITH WEBP OPTIMIZATION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <Link href="/category/small-spaces" className="group relative h-48 rounded-2xl overflow-hidden border border-[#DDD6C8]">
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10 group-hover:from-black/95 transition-all" />
-            <img src="/small-space-plant-corner/small-space-plant-corner-ideas-that-feel-expensive.webp" alt="Small Spaces" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" />
+            <Image 
+              src="/small-space-plant-corner/small-space-plant-corner-ideas-that-feel-expensive.png" 
+              alt="Small Spaces" 
+              fill
+              sizes="(max-width: 768px) 50vw, 25vw"
+              className="object-cover group-hover:scale-105 transition-transform duration-500" 
+            />
             <div className="absolute bottom-4 left-4 right-4 z-20">
               <h3 className="text-white font-serif text-xl font-bold tracking-wide drop-shadow-md">Small Spaces</h3>
             </div>
           </Link>
-
+          
           <Link href="/category/balcony" className="group relative h-48 rounded-2xl overflow-hidden border border-[#DDD6C8]">
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10 group-hover:from-black/95 transition-all" />
-            <img src="/placeholder-balcony.jpg" alt="Balcony Retreats" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" />
+            <Image 
+              src="/placeholder-balcony.webp" 
+              alt="Balcony Retreats" 
+              fill
+              sizes="(max-width: 768px) 50vw, 25vw"
+              className="object-cover group-hover:scale-105 transition-transform duration-500" 
+            />
             <div className="absolute bottom-4 left-4 right-4 z-20">
               <h3 className="text-white font-serif text-xl font-bold tracking-wide drop-shadow-md">Balcony Retreats</h3>
             </div>
@@ -60,7 +81,13 @@ export default function Home() {
 
           <Link href="/category/living-room" className="group relative h-48 rounded-2xl overflow-hidden border border-[#DDD6C8]">
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10 group-hover:from-black/95 transition-all" />
-            <img src="/placeholder-living-room.jpg" alt="Living Room" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" />
+            <Image 
+              src="/placeholder-living-room.webp" 
+              alt="Living Room" 
+              fill
+              sizes="(max-width: 768px) 50vw, 25vw"
+              className="object-cover group-hover:scale-105 transition-transform duration-500" 
+            />
             <div className="absolute bottom-4 left-4 right-4 z-20">
               <h3 className="text-white font-serif text-xl font-bold tracking-wide drop-shadow-md">Living Room</h3>
             </div>
@@ -68,7 +95,13 @@ export default function Home() {
 
           <Link href="/category/home-office" className="group relative h-48 rounded-2xl overflow-hidden border border-[#DDD6C8]">
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10 group-hover:from-black/95 transition-all" />
-            <img src="/placeholder-green-office.jpg" alt="Home Office" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" />
+            <Image 
+              src="/placeholder-green-office.webp" 
+              alt="Home Office" 
+              fill
+              sizes="(max-width: 768px) 50vw, 25vw"
+              className="object-cover group-hover:scale-105 transition-transform duration-500" 
+            />
             <div className="absolute bottom-4 left-4 right-4 z-20">
               <h3 className="text-white font-serif text-xl font-bold tracking-wide drop-shadow-md">Home Office</h3>
             </div>
@@ -76,7 +109,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. INTERACTIVE SHOP PRODUCT CAROUSEL */}
+      {/* 3. DYNAMICALLY LAZY-LOADED PRODUCT CAROUSEL */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-[#DDD6C8]">
         <div className="flex justify-between items-end mb-8">
           <div>
@@ -88,7 +121,6 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* Interactive Carousel Component with Navigation Arrows */}
         <ProductCarousel products={topProducts} />
       </section>
 
@@ -125,7 +157,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. NEWSLETTER CAPTURE SECTION - HIGH CONTRAST WHITE TEXT */}
+      {/* 5. NEWSLETTER CAPTURE SECTION - DYNAMICALLY LAZY-LOADED FORM */}
       <section className="bg-[#4E5B47] text-white py-16 sm:py-24 mt-16 rounded-3xl mx-4 md:mx-8 mb-8 shadow-2xl relative border border-[#3D4A38]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-serif text-white mb-4">
@@ -134,11 +166,11 @@ export default function Home() {
           <p className="text-[#F2EDE4] mb-8 text-lg">
             Get our weekly curation of designer-approved spaces, organization hacks, and exclusive Amazon deals sent directly to your inbox.
           </p>
-
+          
           <div className="relative pb-6">
             <NewsletterForm />
           </div>
-
+          
           <p className="text-[#C9A66B] text-sm mt-2 font-medium">
             No spam, ever. Just beautiful homes. Unsubscribe at any time.
           </p>
