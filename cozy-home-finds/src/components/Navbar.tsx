@@ -90,6 +90,12 @@ const allArticles = [
     slug: "creative-plate-wall-ideas",
     category: "Wall Decor",
     image: "/creative-plate-wall-ideas/plate-wall-art-eclectic.webp"
+  },
+  {
+    title: "Small Modern Living Room Ideas: Cozy Luxury for Middle-Class Homes",
+    slug: "small-modern-living-room",
+    category: "Living Room",
+    image: "/small-modern-living-room/modern-luxury-small-living-room.webp"
   }
 ];
 
