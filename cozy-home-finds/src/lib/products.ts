@@ -224,5 +224,14 @@ export const topProducts: Product[] = [
     category: 'Seasonal Decor',
     description: 'Bring the magic of autumn directly to your apartment. These glowing trees are perfect for styling empty balcony corners.',
     merchant: 'Amazon'
+  },
+  {
+    id: 'ceramic-wall-plates',
+    title: 'Ceramic Wall Plates',
+    link: 'https://amzn.to/3TMbvQ7',
+    imageUrl: '/Products/ceramic-wall-plates.webp',
+    category: 'Wall Decor',
+    description: 'Elevate your wall decor with these stunning ceramic plates, perfect for adding a touch of elegance and personality to any room.',
+    merchant: 'Amazon'
   }
 ];

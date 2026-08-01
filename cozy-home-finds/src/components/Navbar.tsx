@@ -84,6 +84,12 @@ const allArticles = [
     slug: "fake-backyard-apartment-balcony-upgrades",
     category: "Balcony & Outdoor",
     image: "/fake-backyard-apartment-balcony-upgrades/Balcony-Oasis.webp"
+  },
+  {
+    title: "Creative Plate Wall Ideas: Turn Empty Walls into Statement Art",
+    slug: "creative-plate-wall-ideas",
+    category: "Wall Decor",
+    image: "/creative-plate-wall-ideas/plate-wall-art-eclectic.webp"
   }
 ];
 

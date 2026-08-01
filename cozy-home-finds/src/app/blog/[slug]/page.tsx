@@ -1,4 +1,5 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
+import Image from 'next/image';
 import AffiliateCard from '@/components/AffiliateCard';
 import Disclosure from '@/components/Disclosure';
 import { getPostBySlug, getAllPosts } from '@/lib/mdx';
@@ -41,6 +42,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 const components = {
   AffiliateCard,
+  Image,
   h2: (props: any) => (
     <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#3D3226] mt-12 mb-5 leading-tight tracking-tight border-b border-[#E8E1D3]/60 pb-3" {...props} />
   ),
