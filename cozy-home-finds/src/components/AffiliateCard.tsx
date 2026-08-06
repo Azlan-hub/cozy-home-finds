@@ -5,7 +5,7 @@ interface AffiliateCardProps {
   link: string;
   imageUrl: string;
   description?: string;
-  merchant?: 'Amazon' | 'AliExpress';
+  merchant?: 'Amazon' | 'AliExpress' | 'BRKOX';
   customButtonText?: string;
   buttonText?: string;
 }
@@ -21,7 +21,11 @@ export default function AffiliateCard({
 }: AffiliateCardProps) {
   
   // Dynamically set the button text based on the merchant, or allow a custom override
-  const buttonText = customButtonText || deprecatedButtonText || (merchant === 'Amazon' ? 'Check Price on Amazon' : 'View on AliExpress');
+  const buttonText = customButtonText || deprecatedButtonText || (
+    merchant === 'Amazon' ? 'Check Price on Amazon' : 
+    merchant === 'BRKOX' ? 'View on BRKOX' : 
+    'View on AliExpress'
+  );
 
   return (
     <div className="my-10 bg-white rounded-2xl shadow-sm border border-stone-200 overflow-hidden flex flex-col sm:flex-row items-stretch group hover:shadow-md transition-shadow">

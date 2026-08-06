@@ -5,7 +5,7 @@ export interface Product {
   imageUrl: string;
   category: string;
   description: string;
-  merchant: 'Amazon' | 'AliExpress';
+  merchant: 'Amazon' | 'AliExpress' | 'BRKOX';
 }
 
 export const topProducts: Product[] = [
@@ -233,5 +233,14 @@ export const topProducts: Product[] = [
     category: 'Wall Decor',
     description: 'Elevate your wall decor with these stunning ceramic plates, perfect for adding a touch of elegance and personality to any room.',
     merchant: 'Amazon'
+  },
+  {
+    id: 'brkox-jack-sparrow-frame',
+    title: 'Ambient LED Wall Display Frame',
+    link: 'https://tidd.ly/4c8FMir',
+    imageUrl: '/Products/brkox-jack-sparrow-frame.webp',
+    category: 'Wall Decor',
+    description: 'Elevate your home office or room setup with this space-saving wall display. Features built-in ambient LED backlighting to add a cozy glow while keeping your collectibles off your desk and completely clutter-free.',
+    merchant: 'BRKOX'
   }
 ];
