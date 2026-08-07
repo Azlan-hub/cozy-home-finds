@@ -5,7 +5,7 @@ interface AffiliateCardProps {
   link: string;
   imageUrl: string;
   description?: string;
-  merchant?: 'Amazon' | 'AliExpress' | 'BRKOX';
+  merchant?: 'Amazon' | 'AliExpress' | 'BRKOX' | 'King Koil';
   customButtonText?: string;
   buttonText?: string;
 }
@@ -24,6 +24,7 @@ export default function AffiliateCard({
   const buttonText = customButtonText || deprecatedButtonText || (
     merchant === 'Amazon' ? 'Check Price on Amazon' : 
     merchant === 'BRKOX' ? 'View on BRKOX' : 
+    merchant === 'King Koil' ? 'View on King Koil' : 
     'View on AliExpress'
   );
 

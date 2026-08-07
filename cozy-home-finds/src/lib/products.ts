@@ -5,7 +5,7 @@ export interface Product {
   imageUrl: string;
   category: string;
   description: string;
-  merchant: 'Amazon' | 'AliExpress' | 'BRKOX';
+  merchant: 'Amazon' | 'AliExpress' | 'BRKOX' | 'King Koil';
 }
 
 export const topProducts: Product[] = [
@@ -242,5 +242,14 @@ export const topProducts: Product[] = [
     category: 'Wall Decor',
     description: 'Elevate your home office or room setup with this space-saving wall display. Features built-in ambient LED backlighting to add a cozy glow while keeping your collectibles off your desk and completely clutter-free.',
     merchant: 'BRKOX'
+  },
+  {
+    id: 'king-koil-luxury-air-mattress',
+    title: 'King Koil Luxury Raised Air Mattress',
+    link: 'https://tidd.ly/4fK4VlX',
+    imageUrl: '/Products/king-koil-air-mattress.webp',
+    category: 'Furniture',
+    description: 'The ultimate guest room hack for small apartments. Named a top pick by CNN Underscored, this luxury air mattress features a 20-inch raised height that sleeps like a real bed. It includes a built-in high-speed pump and deflates quickly to fit into a compact carry bag for easy closet storage.',
+    merchant: 'King Koil'
   }
 ];

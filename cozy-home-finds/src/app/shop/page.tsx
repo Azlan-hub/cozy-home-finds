@@ -79,7 +79,7 @@ export default function ShopPage() {
                   rel="noopener noreferrer nofollow" 
                   className="block w-full text-center px-5 py-3.5 bg-stone-900 hover:bg-stone-800 text-white text-sm font-semibold rounded-xl transition-all hover:shadow-lg"
                 >
-                  {product.merchant === 'Amazon' ? 'Check Price on Amazon' : product.merchant === 'BRKOX' ? 'View on BRKOX' : 'View on AliExpress'}
+                  {product.merchant === 'Amazon' ? 'Check Price on Amazon' : product.merchant === 'BRKOX' ? 'View on BRKOX' : product.merchant === 'King Koil' ? 'View on King Koil' : 'View on AliExpress'}
                 </a>
               </div>
             </div>

@@ -64,7 +64,7 @@ export default function ProductCarousel({ products }: { products: Product[] }) {
                   {product.title}
                 </h3>
                 <div className="mt-4 pt-3 border-t border-[#F2EDE4] flex items-center justify-between text-xs font-semibold text-[#4E5B47]">
-                  <span>{product.merchant === 'Amazon' ? 'Check Price on Amazon' : product.merchant === 'BRKOX' ? 'View on BRKOX' : 'View on AliExpress'}</span>
+                  <span>{product.merchant === 'Amazon' ? 'Check Price on Amazon' : product.merchant === 'BRKOX' ? 'View on BRKOX' : product.merchant === 'King Koil' ? 'View on King Koil' : 'View on AliExpress'}</span>
                   <span className="text-base">&rarr;</span>
                 </div>
               </div>

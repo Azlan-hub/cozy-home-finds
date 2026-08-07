@@ -96,6 +96,12 @@ const allArticles = [
     slug: "small-modern-living-room",
     category: "Living Room",
     image: "/small-modern-living-room/modern-luxury-small-living-room.webp"
+  },
+  {
+    title: "The Ultimate Guest Hosting Hack for Small Apartments (No Guest Room Needed!)",
+    slug: "ultimate-apartment-guest-room-hack",
+    category: "Small Spaces",
+    image: "/Products/king-koil-air-mattress.webp"
   }
 ];
 
