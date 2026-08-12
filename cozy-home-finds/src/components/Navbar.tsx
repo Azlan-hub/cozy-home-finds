@@ -34,7 +34,7 @@ const allArticles = [
   {
     title: "Anatomy of a Cozy Balcony: Modern Apartment Outdoor Ideas",
     slug: "modern-apartment-balcony",
-    category: "Balcony & Outdoor",
+    category: "Balcony",
     image: "/placeholder-balcony.jpg"
   },
   {
@@ -82,7 +82,7 @@ const allArticles = [
   {
     title: "5 Ways to Fake a Lush Backyard on a Tiny Apartment Balcony",
     slug: "fake-backyard-apartment-balcony-upgrades",
-    category: "Balcony & Outdoor",
+    category: "Balcony",
     image: "/fake-backyard-apartment-balcony-upgrades/Balcony-Oasis.webp"
   },
   {
@@ -116,7 +116,8 @@ export default function Navbar() {
     { name: 'Dining Room', href: '/category/dining-room' },
     { name: 'Home Office', href: '/category/home-office' },
     { name: 'Gaming Room', href: '/category/gaming-room' },
-    { name: 'Balcony & Outdoor', href: '/category/balcony' },
+    { name: 'Balcony', href: '/category/balcony' },
+    { name: 'Outdoor', href: '/category/outdoor' },
     { name: 'Small Spaces', href: '/category/small-spaces' },
     { name: 'Wall Decor', href: '/category/wall-decor' },
     { name: 'Organization', href: '/category/laundry-room' },

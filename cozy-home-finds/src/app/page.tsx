@@ -147,9 +147,7 @@ export default function Home() {
               </div>
               <div className="p-6 flex-1 flex flex-col">
                 <h3 className="font-bold text-xl text-[#2F2F2F] group-hover:text-[#4E5B47] transition-colors leading-snug">{post.title}</h3>
-                <div className="mt-auto pt-4 flex items-center text-sm text-[#8A947B]">
-                  <span>{post.date}</span>
-                </div>
+
               </div>
             </Link>
           ))}

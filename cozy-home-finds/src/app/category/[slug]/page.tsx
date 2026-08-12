@@ -8,7 +8,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
 
   // Validate that the slug is one of our expected categories
   const validCategories = [
-    'decor', 'organization', 'small-spaces', 'rooms', 'home-office', 'balcony', 'wall-decor',
+    'decor', 'organization', 'small-spaces', 'rooms', 'home-office', 'balcony', 'outdoor', 'wall-decor',
     'living-room', 'bedroom', 'dining-room', 'gaming-room',
     'kitchen-organization', 'bathroom-organization', 'laundry-room'
   ];
@@ -56,9 +56,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
               </div>
               <div className="p-6 flex-1 flex flex-col">
                 <h3 className="font-bold text-xl text-stone-900 group-hover:text-amber-700 transition-colors leading-snug">{post.title}</h3>
-                <div className="mt-auto pt-4 flex items-center text-sm text-stone-500">
-                  <span>{post.date}</span>
-                </div>
+
               </div>
             </Link>
           ))}
