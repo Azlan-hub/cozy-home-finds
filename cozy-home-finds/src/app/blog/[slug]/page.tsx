@@ -1,4 +1,3 @@
-import { MDXRemote } from 'next-mdx-remote/rsc';
 import Image from 'next/image';
 import AffiliateCard from '@/components/AffiliateCard';
 import Disclosure from '@/components/Disclosure';
@@ -72,10 +71,36 @@ export async function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
 }
 
+const loadPost = async (slug: string) => {
+  switch (slug) {
+    case '6-simple-ideas-beautiful-home': return (await import('@/content/6-simple-ideas-beautiful-home.mdx')).default;
+    case 'aesthetic-wire-storage-cart': return (await import('@/content/aesthetic-wire-storage-cart.mdx')).default;
+    case 'apartment-dining-room-ideas': return (await import('@/content/apartment-dining-room-ideas.mdx')).default;
+    case 'cozy-apartment-retreat': return (await import('@/content/cozy-apartment-retreat.mdx')).default;
+    case 'cozy-green-home-office': return (await import('@/content/cozy-green-home-office.mdx')).default;
+    case 'creative-plate-wall-ideas': return (await import('@/content/creative-plate-wall-ideas.mdx')).default;
+    case 'decor-mistakes-making-apartment-look-cheap': return (await import('@/content/decor-mistakes-making-apartment-look-cheap.mdx')).default;
+    case 'expensive-small-apartment-living-room': return (await import('@/content/expensive-small-apartment-living-room.mdx')).default;
+    case 'fake-backyard-apartment-balcony-upgrades': return (await import('@/content/fake-backyard-apartment-balcony-upgrades.mdx')).default;
+    case 'how-to-style-wall-shelves': return (await import('@/content/how-to-style-wall-shelves.mdx')).default;
+    case 'modern-apartment-balcony': return (await import('@/content/modern-apartment-balcony.mdx')).default;
+    case 'renter-friendly-decor-upgrades': return (await import('@/content/renter-friendly-decor-upgrades.mdx')).default;
+    case 'small-gaming-setup': return (await import('@/content/small-gaming-setup.mdx')).default;
+    case 'small-lawn-ideas-cozy-outdoor-space': return (await import('@/content/small-lawn-ideas-cozy-outdoor-space.mdx')).default;
+    case 'small-modern-living-room': return (await import('@/content/small-modern-living-room.mdx')).default;
+    case 'small-space-plant-corner': return (await import('@/content/small-space-plant-corner.mdx')).default;
+    case 'ultimate-apartment-guest-room-hack': return (await import('@/content/ultimate-apartment-guest-room-hack.mdx')).default;
+    default: return null;
+  }
+}
+
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   try {
     const { slug } = await params;
-    const { frontmatter, content } = getPostBySlug(slug);
+    const { frontmatter } = getPostBySlug(slug);
+    const PostContent = await loadPost(slug);
+
+    if (!PostContent) return notFound();
 
     return (
       <article className="max-w-3xl mx-auto py-10 px-4 sm:px-0">
@@ -97,7 +122,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         <div id="adsense-top" className="w-full my-6"></div>
 
         <div className="prose prose-stone lg:prose-lg max-w-none">
-          <MDXRemote source={content} components={components} />
+          <PostContent components={components} />
         </div>
 
         {/* Invisible AdSense Slot */}
