@@ -1,43 +1,54 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
+import postsData from './posts-data.json';
 
-const contentDirectory = path.join(process.cwd(), 'src/content');
-
-export function getAllPosts() {
-  const files = fs.readdirSync(contentDirectory);
-
-  const posts = files.map((fileName) => {
-    const slug = fileName.replace('.mdx', '');
-    const fullPath = path.join(contentDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
-    const { data } = matter(fileContents);
-
-    return {
-      slug,
-      title: data.title || slug.replace('-', ' '),
-      image: data.image || '',
-      date: data.date || '2026-01-01',
-      // Add the category field here
-      category: data.category || 'uncategorized',
-    };
-  });
-
-  return posts.sort((a, b) => (new Date(b.date).getTime() - new Date(a.date).getTime()));
+export interface Frontmatter {
+  title: string;
+  image: string;
+  category: string;
+  description?: string;
+  author?: string;
+  date?: string;
 }
 
-export function getPostBySlug(slug: string) {
-  const fullPath = path.join(contentDirectory, `${slug}.mdx`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const { data, content } = matter(fileContents);
+export interface Post {
+  slug: string;
+  title: string;
+  image: string;
+  category: string;
+  date?: string;
+}
 
+export interface RawPost {
+  slug: string;
+  title: string;
+  image: string;
+  category: string;
+  date?: string;
+  frontmatter: Frontmatter;
+  content: string;
+}
+
+const typedPostsData = postsData as RawPost[];
+
+export function getAllPosts(): Post[] {
+  return typedPostsData.map(post => ({
+    slug: post.slug,
+    title: post.title,
+    image: post.image,
+    date: post.date,
+    category: post.category,
+  }));
+}
+
+export function getPostBySlug(slug: string): { frontmatter: Frontmatter; content: string } {
+  const post = typedPostsData.find((p) => p.slug === slug);
+  if (!post) throw new Error(`Post with slug ${slug} not found`);
+  
   return {
-    frontmatter: data,
-    content,
+    frontmatter: post.frontmatter as Frontmatter,
+    content: post.content,
   };
 }
 
-// NEW FUNCTION: Filter posts by category
 export function getPostsByCategory(categorySlug: string) {
   const allPosts = getAllPosts();
   return allPosts.filter((post) => post.category === categorySlug);

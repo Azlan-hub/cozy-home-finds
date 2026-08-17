@@ -3,6 +3,15 @@ import Image from 'next/image';
 import { getPostsByCategory } from '@/lib/mdx';
 import { notFound } from 'next/navigation';
 
+export function generateStaticParams() {
+  const validCategories = [
+    'decor', 'organization', 'small-spaces', 'rooms', 'home-office', 'balcony', 'outdoor', 'wall-decor',
+    'living-room', 'bedroom', 'dining-room', 'gaming-room',
+    'kitchen-organization', 'bathroom-organization', 'laundry-room'
+  ];
+  return validCategories.map((slug) => ({ slug }));
+}
+
 export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
 

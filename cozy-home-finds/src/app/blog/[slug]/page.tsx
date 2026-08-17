@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         description: `Read our guide on ${frontmatter.title.toLowerCase()}.`,
         url: `/blog/${slug}`,
         type: 'article',
-        publishedTime: frontmatter.date,
+        ...(frontmatter.date ? { publishedTime: frontmatter.date } : {}),
         images: [
           {
             url: frontmatter.image,
