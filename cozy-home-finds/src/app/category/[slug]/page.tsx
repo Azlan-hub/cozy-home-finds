@@ -3,6 +3,15 @@ import Image from 'next/image';
 import { getPostsByCategory } from '@/lib/mdx';
 import { notFound } from 'next/navigation';
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const formattedTitle = slug.replace('-', ' ');
+  return {
+    title: `${formattedTitle.replace(/\b\w/g, l => l.toUpperCase())} | Cozy Home Finds`,
+    alternates: { canonical: `/category/${slug}` }
+  };
+}
+
 export function generateStaticParams() {
   const validCategories = [
     'decor', 'organization', 'small-spaces', 'rooms', 'home-office', 'balcony', 'outdoor', 'wall-decor',

@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Cozy Home Finds | Beautiful Spaces. Smarter Living.',
   description: 'Discover aesthetic home decor ideas, smart organization tips, and premium Amazon finds that make every room feel expensive.',
-  metadataBase: new URL('https://cozyhomefinds.com'),
+  metadataBase: new URL('https://cozy-home-finds.com'),
   openGraph: {
     title: 'Cozy Home Finds',
     description: 'Aesthetic home decor ideas and organization tips.',

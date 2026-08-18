@@ -12,6 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
       title: `${frontmatter.title} | Cozy Home Finds`,
       description: `Discover the best ideas and tips for ${frontmatter.title.toLowerCase()}. Smart home organization and aesthetic decor.`,
+      alternates: { canonical: `/blog/${slug}` },
       openGraph: {
         title: frontmatter.title,
         description: `Read our guide on ${frontmatter.title.toLowerCase()}.`,

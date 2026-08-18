@@ -1,6 +1,7 @@
 export const metadata = {
   title: 'Affiliate Disclosure | Cozy Home Finds',
   description: 'Our affiliate disclosure and FTC compliance statement.',
+  alternates: { canonical: '/disclosure' }
 };
 
 export default function DisclosurePage() {

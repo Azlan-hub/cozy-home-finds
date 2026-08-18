@@ -1,3 +1,4 @@
+export const metadata = { alternates: { canonical: '/privacy' } };
 export default function PrivacyPolicy() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-12 md:py-20">

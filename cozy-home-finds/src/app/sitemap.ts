@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/mdx';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://cozyhomefinds.com'; // Replace with your final custom domain when ready
+  const baseUrl = 'https://cozy-home-finds.com'; // Replace with your final custom domain when ready
 
   // 1. Fetch all blog post slugs
   const posts = getAllPosts();

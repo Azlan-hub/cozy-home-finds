@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://cozyhomefinds.com'; // Replace with your final custom domain when ready
+  const baseUrl = 'https://cozy-home-finds.com'; // Replace with your final custom domain when ready
 
   return {
     rules: {
