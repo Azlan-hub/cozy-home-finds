@@ -6,9 +6,15 @@ import { notFound } from 'next/navigation';
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const formattedTitle = slug.replace('-', ' ');
+  const capitalizedTitle = formattedTitle.replace(/\b\w/g, l => l.toUpperCase());
+  
   return {
-    title: `${formattedTitle.replace(/\b\w/g, l => l.toUpperCase())} | Cozy Home Finds`,
-    alternates: { canonical: `/category/${slug}` }
+    title: `${capitalizedTitle} | Cozy Home Finds`,
+    alternates: { canonical: `/category/${slug}` },
+    openGraph: {
+      title: `${capitalizedTitle} | Cozy Home Finds`,
+      url: `/category/${slug}`,
+    }
   };
 }
 

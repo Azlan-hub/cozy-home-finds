@@ -1,4 +1,11 @@
-export const metadata = { alternates: { canonical: '/privacy' } };
+export const metadata = {
+  title: 'Privacy Policy | Cozy Home Finds',
+  alternates: { canonical: '/privacy' },
+  openGraph: {
+    title: 'Privacy Policy | Cozy Home Finds',
+    url: '/privacy',
+  }
+};
 export default function PrivacyPolicy() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-12 md:py-20">

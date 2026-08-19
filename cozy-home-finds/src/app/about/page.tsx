@@ -4,7 +4,12 @@ import Link from 'next/link';
 export const metadata = {
   title: 'About Azlan | Cozy Home Finds',
   description: 'Learn how a cramped apartment turned into the Cozy Home Finds movement.',
-  alternates: { canonical: '/about' }
+  alternates: { canonical: '/about' },
+  openGraph: {
+    title: 'About Azlan | Cozy Home Finds',
+    description: 'Learn how a cramped apartment turned into the Cozy Home Finds movement.',
+    url: '/about',
+  }
 };
 
 export default function AboutPage() {

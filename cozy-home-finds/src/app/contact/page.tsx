@@ -1,4 +1,11 @@
-export const metadata = { alternates: { canonical: '/contact' } };
+export const metadata = {
+  title: 'Contact Us | Cozy Home Finds',
+  alternates: { canonical: '/contact' },
+  openGraph: {
+    title: 'Contact Us | Cozy Home Finds',
+    url: '/contact',
+  }
+};
 export default function ContactPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-12 md:py-20">
