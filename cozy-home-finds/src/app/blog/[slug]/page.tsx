@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import AdSense from '@/components/AdSense';
 import AffiliateCard from '@/components/AffiliateCard';
 import Disclosure from '@/components/Disclosure';
 import { getPostBySlug, getAllPosts } from '@/lib/mdx';
@@ -119,15 +120,15 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         {/* Rendered ONCE automatically right after title */}
         <Disclosure />
 
-        {/* Invisible AdSense Slot */}
-        <div id="adsense-top" className="w-full my-6"></div>
+        {/* AdSense Top Slot */}
+        <AdSense adSlot="REPLACE_LATER_1" className="w-full my-6 min-h-[100px] flex justify-center" />
 
         <div className="prose prose-stone lg:prose-lg max-w-none">
           <PostContent components={components} />
         </div>
 
-        {/* Invisible AdSense Slot */}
-        <div id="adsense-bottom" className="w-full mt-12"></div>
+        {/* AdSense Bottom Slot */}
+        <AdSense adSlot="REPLACE_LATER_2" className="w-full mt-12 min-h-[100px] flex justify-center" />
       </article>
     );
   } catch (error) {
